@@ -25,8 +25,8 @@ SECRET_KEY = 'f#7n4z2lrv$qas@y(sz9#(j5nz2i7!ca8_-ijxr9o=o$pr46r%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['padma-sree.herokuapp.com']
-#ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -118,6 +118,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-import  django_heroku
-django_heroku.settings(locals())
+
 STATIC_URL = '/static/'
