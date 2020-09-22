@@ -1,0 +1,498 @@
+<html>
+<title>PADMA SREE ENTERPRISES</title>
+<head>
+<style> 
+        table, th, td { 
+            width: 100%;
+            padding: 3px;
+            border: 1px solid black; 
+            border-collapse: collapse; 
+        } 
+    </style>
+</head>
+<body>
+<br>
+
+<table >
+<tr>
+<th>
+<h2 style="text-align: right;">ORIGINAL FOR PURCHASER</h2>
+</th>
+</tr>
+<tr>
+<th>
+<h2 style="text-align: center;">GST TAX INVOICE</h2>
+</th>
+</tr>
+<tr>
+<th>
+<h1 style="text-align: center;font-size: 20px;">PADMA SREE ENTERPRISES</h1>
+</th>
+</tr>
+<tr>
+<th>
+<h3 style="text-align: center;">MANUFACTURERS OF TEENOPAL AND ALLIED PRODUCTS</h3>
+</th>
+</tr>
+<tr>
+<th>
+<h3 style="text-align: center;">SY.NO.80,H.NO:4-1209/79,NEW HAFEEZPET(village),<br>MIYAPUR,SERILINGAMPALLY(mandal),R.R.DIST,TELANGANA,9381656263,7207684960.</h3>
+</th>
+</tr>
+<tr>
+<th>
+<h3 style="text-align: center;">GSTIN:36BTSPB9931K1Z2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAIL ID:padmasreeenterprises78@gmail.com</h3>
+</th>
+</tr>
+
+</table>
+<table>
+<tr>
+<td>
+<h1 style="text-align: left;"><u>CUSTOMER DETAILS:</u></h1>
+<p style="text-align: left;"><b style="font-size: 14px">{{name}}</b> <br> {{address}}<br>GSTIN:{{n1}}</p>
+</td>
+<td>
+<table>
+<tr>
+<td>
+<p><b>INVOICE NO<b></p>
+</td>
+<td>
+<p><b>{{vnum}}<b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>INVOICE DATE</p>
+</td>
+<td>
+<p>{{date}}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>PLACE OF SUPPLY</p>
+</td>
+<td>
+<p>{{sname}}</p>
+</td>
+</tr>
+</table> 
+</td>
+</tr>
+
+</table>
+<table class='table'>
+<tr>
+
+<th>
+      <h3 >PRODUCT/DESCRIPTION</h3> 
+        </th>
+        <th>
+        <h3 >HSN/SAC</h3> 
+        </th>
+        <th>
+        <h3 >QUANTITY(liters)</h3> 
+        </th>
+        <th>
+        <h3 >RATE</h3> 
+        </th>
+        <th>
+        <h3 >PRICE</h3> 
+        </th>         
+</tr>
+{% for i in del %}
+<tr style="text-align: center;">
+
+<td>
+{{i.itemname}}
+</td>
+<td>
+{{i.hsn}}
+</td>
+<td>
+{{i.quantity}}
+</td>
+<td>
+{{i.rate}}
+</td>
+<td>
+{{i.price}}
+</td>
+</tr>
+{%endfor%}
+</table>
+<table>
+<td>
+<h2 style="text-align: center;width:80%;">Total</h2>
+</td>
+
+<td  style="text-align: center;width:25%;">
+<h2>{{total}}</h2>
+</td>
+
+</table>
+
+
+<table>
+<tr>
+<th>
+      <h3 >CGST (2.5%)</h3> 
+        </th>
+        <th>
+        <h3 >SGST (2.5%)</h3> 
+        </th>
+        <th>
+        <h3 >IGST (18%)</h3> 
+        </th>
+        <th>TRANSPORTATION COST</h3> 
+        </th>
+        </tr>
+        <tr style="text-align: center;">
+        {% if search == "gst" %}
+        <td>{{stats}}</td>
+        {%else%}
+        <td>0</td>
+        {%endif%}
+        {% if search == "gst" %}
+        <td>{{stats}}</td>
+        {%else%}
+        <td>0</td>
+        {%endif%}
+        {% if search == "ist" %}
+        <td>{{stats}}</td>
+        {%else%}
+        <td>0</td>
+        {%endif%}
+        <td>
+        {{cost}}
+        </td>
+        </tr>
+</table>
+
+<table>
+<tr>
+<th>
+<h2>IN WORDS: {{word}} RUPEES ONLY.</h2>
+</th>
+<td>
+<table>
+<tr>
+<td>
+<p>Gross Taxable Value</p>
+</td>
+<td style="text-align: center;">
+<p>{{total}}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Transportation Cost</p>
+</td>
+<td style="text-align: center;">
+<p>{{cost}}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Total Taxes</p>
+</td>
+<td style="text-align: center;">
+<p>{{cost1}}</p>
+</td>
+</tr>
+<tr>
+<td>
+<h1>Total Invoice Value</h1>
+</td>
+<td style="text-align: center;">
+<h1>{{total1}}</h1>
+</td>
+</tr>
+</table> 
+</td>
+</tr>
+
+
+
+
+</table>
+<table >
+<td>
+
+<h1 style="text-align: left;"><u>BANKING DETAILS:</u> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+for PADMA SREE ENTERPRISES </h1>
+<p style="text-align: left;">BANK: ANDHRA BANK <br> BRANCH: MADHAPUR <br>A/C NO: 128211100004650<br>IFSC: ANDB0001282
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Authorised Signatory</p>
+
+</td>
+</table>
+<p style="text-align: center;"> SUBJECTED TO HYDERABAD JURISDICTION <br> This is a Computer Generated Invoice</p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<table >
+<tr>
+<th>
+<h2 style="text-align: right;">DUPLICATE FOR SELLER</h2>
+</th>
+</tr>
+<tr>
+<th>
+<h2 style="text-align: center;">GST TAX INVOICE</h2>
+</th>
+</tr>
+<tr>
+<th>
+<h1 style="text-align: center;font-size: 20px;">PADMA SREE ENTERPRISES</h1>
+</th>
+</tr>
+<tr>
+<th>
+<h3 style="text-align: center;">MANUFACTURERS OF TEENOPAL AND ALLIED PRODUCTS</h3>
+</th>
+</tr>
+<tr>
+<th>
+<h3 style="text-align: center;">SY.NO.80,H.NO:4-1209/79,NEW HAFEEZPET(village),<br>MIYAPUR,SERILINGAMPALLY(mandal),R.R.DIST,TELANGANA,9381656263,7207684960.</h3>
+</th>
+</tr>
+<tr>
+<th>
+<h3 style="text-align: center;">GSTIN:36BTSPB9931K1Z2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAIL ID:padmasreeenterprises78@gmail.com</h3>
+</th>
+</tr>
+
+</table>
+<table>
+<tr>
+<td>
+<h1 style="text-align: left;"><u>CUSTOMER DETAILS:</u></h1>
+<p style="text-align: left;"><b style="font-size: 14px">{{name}}</b> <br> {{address}}<br>GSTIN:{{n1}}</p>
+</td>
+<td>
+<table>
+<tr>
+<td>
+<p><b>INVOICE NO<b></p>
+</td>
+<td>
+<p><b>{{vnum}}<b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>INVOICE DATE</p>
+</td>
+<td>
+<p>{{date}}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>PLACE OF SUPPLY</p>
+</td>
+<td>
+<p>{{sname}}</p>
+</td>
+</tr>
+</table> 
+</td>
+</tr>
+
+</table>
+<table class='table'>
+<tr>
+
+<th>
+      <h3 >PRODUCT/DESCRIPTION</h3> 
+        </th>
+        <th>
+        <h3 >HSN/SAC</h3> 
+        </th>
+        <th>
+        <h3 >QUANTITY(liters)</h3> 
+        </th>
+        <th>
+        <h3 >RATE</h3> 
+        </th>
+        <th>
+        <h3 >PRICE</h3> 
+        </th>         
+</tr>
+{% for i in del %}
+<tr style="text-align: center;">
+
+<td>
+{{i.itemname}}
+</td>
+<td>
+{{i.hsn}}
+</td>
+<td>
+{{i.quantity}}
+</td>
+<td>
+{{i.rate}}
+</td>
+<td>
+{{i.price}}
+</td>
+</tr>
+{%endfor%}
+</table>
+<table>
+<td>
+<h2 style="text-align: center;width:80%;">Total</h2>
+</td>
+
+<td  style="text-align: center;width:25%;">
+<h2>{{total}}</h2>
+</td>
+
+</table>
+
+
+<table>
+<tr>
+<th>
+      <h3 >CGST (2.5%)</h3> 
+        </th>
+        <th>
+        <h3 >SGST (2.5%)</h3> 
+        </th>
+        <th>
+        <h3 >IGST (18%)</h3> 
+        </th>
+        <th>TRANSPORTATION COST</h3> 
+        </th>
+        </tr>
+        <tr style="text-align: center;">
+        {% if search == "gst" %}
+        <td>{{stats}}</td>
+        {%else%}
+        <td>0</td>
+        {%endif%}
+        {% if search == "gst" %}
+        <td>{{stats}}</td>
+        {%else%}
+        <td>0</td>
+        {%endif%}
+        {% if search == "ist" %}
+        <td>{{stats}}</td>
+        {%else%}
+        <td>0</td>
+        {%endif%}
+        <td>
+        {{cost}}
+        </td>
+        </tr>
+</table>
+
+<table>
+<tr>
+<th>
+<h2>IN WORDS: {{word}} RUPEES ONLY.</h2>
+</th>
+<td>
+<table>
+<tr>
+<td>
+<p>Gross Taxable Value</p>
+</td>
+<td style="text-align: center;">
+<p>{{total}}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Transportation Cost</p>
+</td>
+<td style="text-align: center;">
+<p>{{cost}}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Total Taxes</p>
+</td>
+<td style="text-align: center;">
+<p>{{cost1}}</p>
+</td>
+</tr>
+<tr>
+<td>
+<h1>Total Invoice Value</h1>
+</td>
+<td style="text-align: center;">
+<h1>{{total1}}</h1>
+</td>
+</tr>
+</table> 
+</td>
+</tr>
+
+
+
+
+</table>
+<table >
+<td>
+
+<h1 style="text-align: left;"><u>BANKING DETAILS:</u> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+for PADMA SREE ENTERPRISES </h1>
+<p style="text-align: left;">BANK: ANDHRA BANK <br> BRANCH: MADHAPUR <br>A/C NO: 128211100004650<br>IFSC: ANDB0001282
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Authorised Signatory</p>
+
+</td>
+</table>
+<p style="text-align: center;"> SUBJECTED TO HYDERABAD JURISDICTION <br> This is a Computer Generated Invoice</p>
+
+</body>
+</html>
+

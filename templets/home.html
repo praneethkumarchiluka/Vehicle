@@ -1,0 +1,219 @@
+<html>
+<title>PADMA SREE ENTERPRISES</title>
+<style>
+body{
+    background-color:lightblue;
+    }
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type=text],select {
+  width: 100%;
+  padding: 5px 5px;
+  margin: 8px 0;
+  display:inline-block;
+  border:1px solid #ccc;
+  border-radius:4px;
+  box-sizing: border-box;
+}
+h1{
+    color:BLACK;
+    text-align:center
+}
+h3{
+    color:BLACK;
+    text-align:center
+}
+
+</style>
+<body>
+<h1>PADMA SREE ENTERPRISES</h1>
+
+
+<table>
+
+
+<tr>
+<th>
+      <h3 >Item</h3> 
+        </th>
+        <th>
+        <h3 >HSN/SAC</h3> 
+        </th>
+        <th>
+        <h3 >Quantity(liters)</h3> 
+        </th>
+        <th>
+        <h3 >Rate</h3> 
+        </th>
+         
+</tr>
+<tr>
+<form action=" " method="post">
+           {% csrf_token %}
+          <td>
+          <input type="text" name="item" value="Tyre polish">
+          </td>
+          <td>
+          <input type="text" name="hsn" required>
+          </td>
+          <td>
+          <input type="text" name="quantity" required>
+          </td>
+          <td>
+          <input type="text" name="rate" value="180" >
+          </td>
+          <td>
+          <button class="button">add</button>
+          </td>
+       </form>
+       </tr>
+       <tr>
+     <form action=" " method="post">
+           {% csrf_token %}
+          <td>
+          <input type="text" name="item" value="Teenopal (soap oil)">
+          </td>
+          <td>
+          <input type="text" name="hsn" required>
+          </td>
+          <td>
+          <input type="text" name="quantity" required>
+          </td>
+          <td>
+          <input type="text" name="rate" value="20" >
+          </td>
+          <td>
+          <button class="button">add</button>
+          </td>
+       </form>  
+       </tr>
+              <tr>
+     <form action=" " method="post">
+           {% csrf_token %}
+          <td>
+          <input type="text" name="item" value="Scentend phenyi">
+          </td>
+          <td>
+          <input type="text" name="hsn" required>
+          </td>
+          <td>
+          <input type="text" name="quantity" required>
+          </td>
+          <td>
+          <input type="text" name="rate" value="20">
+          </td>
+          <td>
+          <button class="button">add</button>
+          </td>
+       </form>  
+       </tr>
+              <tr>
+     <form action=" " method="post">
+           {% csrf_token %}
+          <td>
+          <input type="text" name="item" value="Acid">
+          </td>
+          <td>
+          <input type="text" name="hsn" required>
+          </td>
+          <td>
+          <input type="text" name="quantity" required>
+          </td>
+          <td>
+          <input type="text" name="rate" value="20">
+          </td>
+          <td>
+          <button class="button">add</button>
+          </td>
+       </form>  
+       </tr>
+              <tr>
+     <form action=" " method="post">
+           {% csrf_token %}
+          <td>
+          <input type="text" name="item" value="Hand wash liquid">
+          </td>
+          <td>
+          <input type="text" name="hsn" required>
+          </td>
+          <td>
+          <input type="text" name="quantity" required>
+          </td>
+          <td>
+          <input type="text" name="rate" value="180" >
+          </td>
+          <td>
+          <button class="button">add</button>
+          </td>
+       </form>  
+       </tr>
+              <tr>
+     <form action=" " method="post">
+           {% csrf_token %}
+          <td>
+          <input type="text" name="item" value="Glass cleaner">
+          </td>
+          <td>
+          <input type="text" name="hsn" required>
+          </td>
+          <td>
+          <input type="text" name="quantity" required>
+          </td>
+          <td>
+          <input type="text" name="rate" value="80" >
+          </td>
+          <td>
+          <button class="button">add</button>
+          </td>
+       </form>  
+       </tr>
+              <tr>
+     <form action=" " method="post">
+           {% csrf_token %}
+          <td>
+          <input type="text" name="item" value="Air freshener">
+          </td>
+          <td>
+          <input type="text" name="hsn" required>
+          </td>
+          <td>
+          <input type="text" name="quantity" required>
+          </td>
+          <td>
+          <input type="text" name="rate" value="80" >
+          </td>
+          <td>
+          <button class="button">add</button>
+          </td>
+       </form>  
+       </tr>
+</table>
+
+<form action="/total/" method="POST">
+ {% csrf_token %}
+ <button class="button">Next Page</button>
+ 
+        
+</form>
+</table>
+<table>
+<td>
+<h3>When you start entering new customer items please remove other customer items</h3><a href="{%url "keeper:remove" %}">Remove</a>
+
+</td>
+<td>
+{{mes}}
+</td>
+</table>
+</body>
+</html>

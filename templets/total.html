@@ -1,0 +1,131 @@
+<html>
+<title>PADMA SREE ENTERPRISES</title>
+<style>
+body{
+    background-color:lightblue;
+    }
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type=text],select {
+  width: 100%;
+  padding: 5px 5px;
+  margin: 8px 0;
+  display:inline-block;
+  border:1px solid #ccc;
+  border-radius:4px;
+  box-sizing: border-box;
+}
+h1{
+    color:BLACK;
+    text-align:center
+}
+h3{
+    color:BLACK;
+    text-align:center
+}
+
+</style>
+<body>
+
+<h1>PADMA SREE ENTERPRISES</h1>
+<form action="/render/pdf/" >
+ {% csrf_token %}
+<table><tr><td><h2>Customer Name:<td><input type="text" name="fname" required></td></h2></td>
+<td><h2>Address:<td><input type="text" name="address" required></td></h2></td>
+<td><h2>Trasportation Cost:<td><input type="text" name="cost" required></td></h2></td></tr>
+<tr><td><h2>GSTIN:<td><input type="text" name="number" required></td></h2></td>
+<td><h2>Invoice Number:<td><input type="text" name="vnumber" required></td></h2></td>
+<td><h2>Place of Supply:<td><input type="text" name="supply" required></td></h2></td>
+</tr>
+<tr>
+<td><h2>Type:<td>
+          <select name="type" required>
+          <option></option>
+          <option>With in State</option>
+          <option>Other State</option>
+          </select>
+          </td>
+          </h2>
+          </td>
+ <td>
+          <button name="pdf" class="button">Download</button>
+          </td></tr>
+          </table>
+</form>
+<table>
+<tr>
+
+<th>
+      <h3 >PRODUCT/DESCRIPTION</h3> 
+        </th>
+        <th>
+        <h3 >HSN/SAC</h3> 
+        </th>
+        <th>
+        <h3 >QUANTITY(liters)</h3> 
+        </th>
+        <th>
+        <h3 >RATE</h3> 
+        </th>
+        <th>
+        <h3 >PRICE</h3> 
+        </th>         
+</tr>
+{% for i in del %}
+<tr>
+{% csrf_token %}
+<td>
+<input type="text" name="item" value="{{i.itemname}}" disabled>
+</td>
+<td>
+<input type="text" name="hsn" value="{{i.hsn}}" disabled>
+</td>
+<td>
+<input type="text" name="quantity" value="{{i.quantity}}" disabled>
+</td>
+<td>
+<input type="text" name="rate" value="{{i.rate}}" disabled>
+</td>
+<td>
+<input type="text" name="rate" value="{{i.price}}" disabled>
+</td>
+<td>
+<a href="/delete/{{i.id }}">Delete</a>
+</td>
+</tr>
+{%endfor%}
+<td>
+<h2>Total</h2>
+</td>
+<td>
+<h2></h2>
+</td>
+<td>
+<h2>{{count}}</h2>
+</td>
+<td>
+<h2></h2>
+</td>
+<td>
+<h2>{{total}}</h2>
+</td>
+</table>
+<table>
+
+<td>
+          <a class="btn btn-info" href="{% url "keeper:home" %}" type="button" ">Home</a>
+</td>
+</table>
+</body>
+</html>
+
